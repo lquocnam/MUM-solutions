@@ -39,7 +39,7 @@ public class Question1 {
         return false;
     }
 
-    static int isEvenSubset(int m, int n) {
+    public static int isEvenSubset(int m, int n) {
         List<Integer> evenFactorsOfM = evenFactorsOfGivenNumber(m);
         List<Integer> evenFactorsOfN = evenFactorsOfGivenNumber(n);
         return containsAll(evenFactorsOfN, evenFactorsOfM) ? 1 : 0;
