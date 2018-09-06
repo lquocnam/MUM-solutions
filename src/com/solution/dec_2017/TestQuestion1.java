@@ -1,7 +1,5 @@
 package com.solution.dec_2017;
 
-import java.util.*;
-
 /**
  * Given a positive integer k, another positive integer n is said to have k-small factors
  * if n can be written as a product u*v where u and v are both less than k. For instance,
@@ -20,28 +18,17 @@ import java.util.*;
  * hasKSmallFactors(6, 14) is false (since the only way to factor 14 is 2*7 = 14 and 7 not less than 6)
  * hasKSmallFactors(6, 30) is false (since 5*6 = 30, 6 not less than 6; 3 * 10 = 30, 10 not less than 6; 2 * 15 = 30, 15 not less than 6)
  */
-public class Question1 {
+public class TestQuestion1 {
 
-    private static List<Integer> factorsLessThan10(int n) {
-        List<Integer> factors = new ArrayList<>();
-        for (int i = 2; i < 10; i++) {
-            if(n % i == 0) {
-                factors.add(i);
-            }
-        }
-        return factors;
+    public static void main(String... args) {
+
+        boolean result = Question1.hasKSmallFactors(7, 30);
+        if(result) System.out.println("(since 5*6 = 30 and 5 < 7, 6 < 7)");
+
+        result = Question1.hasKSmallFactors(6, 14);
+        if(!result) System.out.println("(since the only way to factor 14 is 2*7 = 14 and 7 not less than 6)");
+
+        result = Question1.hasKSmallFactors(6, 30);
+        if(!result) System.out.println("(since 5*6 = 30, 6 not less than 6; 3 * 10 = 30, 10 not less than 6; 2 * 15 = 30, 15 not less than 6)");
     }
-
-    public static boolean hasKSmallFactors(int k, int n) {
-
-        List<Integer> factorsOfN = factorsLessThan10(n);
-
-        for (int i = 0; i < factorsOfN.size(); i++) {
-            if(factorsOfN.get(i) >= k) {
-                return false;
-            }
-        }
-        return true;
-    }
-
 }
