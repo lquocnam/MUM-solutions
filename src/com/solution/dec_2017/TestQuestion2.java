@@ -1,5 +1,7 @@
 package com.solution.dec_2017;
 
+import java.util.Arrays;
+
 /**
  * Write a function fill with signature
  *
@@ -15,17 +17,17 @@ package com.solution.dec_2017;
  * fill({4, 2, -3, 12}, 1, 5)  returns {4, 4, 4, 4, 4}.
  * fill({2, 6, 9, 0, -3}, 0, 4) returns null.
  */
-public class Question2 {
+public class TestQuestion2 {
 
-    public static int[] fill(int[] arr, int k, int n) {
-        int[] arr2 = new int[n];
+    public static void main(String... args) {
+        int[] result = Question2.fill(new int[]{1,2,3,5, 9, 12,-2,-1}, 3, 10);
+        System.out.println(Arrays.toString(result));
 
-        for (int i = 0; i < arr2.length;) {
-            for (int j = 0; j < k; j++, i++) {
-                if(i < arr2.length) arr2[i] = arr[j];
-            }
-        }
+        result = Question2.fill(new int[]{4, 2, -3, 12}, 1, 5);
+        System.out.println(Arrays.toString(result));
 
-        return arr2;
+        result = Question2.fill(new int[]{2, 6, 9, 0, -3}, 0, 4);
+        System.out.println(Arrays.toString(result));
     }
+
 }
